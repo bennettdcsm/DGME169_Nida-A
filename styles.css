@@ -610,6 +610,8 @@ html, body {
     padding: 8rem 4vw;
     background: #303030;
     color: white;
+    overflow: auto;
+    margin-bottom: 4rem;
 }
 
 .personas-grid {
@@ -651,7 +653,9 @@ html, body {
 
 /* DESIGN PROCESS */
 .designprocess-section {
-    padding: 4rem 0;
+    margin-top: 4rem;
+    padding: 3rem 0;
+    width: 100%;
 }
 
 .designprocess-inner {
@@ -683,17 +687,17 @@ html, body {
 
 .designprocess-paragraph {
     font-family: "Inter", sans-serif;
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
+    line-height: 1.6;
     text-align: justify;
+    margin: 0 auto;
     font-size: clamp(0.95rem, 1.2vw, 1rem);
     font-weight: 300;
-    line-height: 1.6;
+    max-width: 75%;
 }
 
 /* VISUAL EVOLUTION */
 .visual-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 .visual-inner {
@@ -724,35 +728,35 @@ html, body {
 
 .visual-paragraph {
     font-family: "Inter", sans-serif;
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
+    line-height: 1.6;
     text-align: justify;
+    margin: 0 auto 1.5rem;
     font-size: clamp(0.95rem, 1.2vw, 1rem);
     font-weight: 300;
-    line-height: 1.6;
+    margin-bottom: 1rem;
+    max-width: 75%;
 }
 
 .visual-image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin: 2rem auto 0;
+    margin: 3rem auto 0;
     width: fit-content;
-    max-width: none;
+    max-width: 700px;  
     margin-top: 4rem;
 }
 
 .visual-image-grid img {
-    width: 220px;
+    width: 200px;
     height: auto;
     border: 0.5px solid #888;
     object-fit: cover;
 }
 
-
 /* PROTOTYPE SECTION */
 .prototype-section {
-    padding:4rem 0;
+    padding:3rem 0;
     margin-bottom: 2rem;
 }
 
@@ -784,12 +788,13 @@ html, body {
 
 .prototype-paragraph {
     font-family: "Inter", sans-serif;
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
+    line-height: 1.6;
     text-align: justify;
+    margin: 0 auto 1.5rem;
     font-size: clamp(0.95rem, 1.2vw, 1rem);
     font-weight: 300;
-    line-height: 1.6;
+    margin-bottom: 1rem;
+    max-width: 75%;
 }
 
 .prototype-image {
@@ -936,10 +941,12 @@ html, body {
     .designprocess-section, .visual-section, .prototype-section {
         width: min(90%, 1200px);
         margin: 0 auto;
+        padding: 2.5rem 0
     }
 
-    .designprocess-paragraph {
-        margin: 0 auto
+    .designprocess-paragraph, .visual-paragraph, .prototype-pa {
+        margin: 0 auto;
+        max-width: 100%;
     }
 
     .visual-image-grid {
