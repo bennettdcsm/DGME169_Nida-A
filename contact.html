@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nida Apa</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="nav-bar">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="index.html"><span class="star">*</span>N</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="uxwork.html">UX Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+        <button class="close-menu">×</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="uxwork.html">UX Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+
+    <!-- PAGE CONTENT -->
+    <main class="contact-page">
+
+        <!-- CONTACT HEADER -->
+        <section class="profile-section">
+            <div class="profile-container">
+                
+                <div class="profile-text">
+                    <h1 class="profile-title">Get in touch</h1>
+                    <p class="profile-paragraph">
+                        Whether you have a project in mind, a collaboration opportunity, or just want to say hello, I’d love to hear from you.
+                    </p>
+                    <p class="profile-paragraph">
+                        Feel free to drop a message using the form below. I try my best to respond within a couple of days.
+                    </p>
+                </div>
+
+                <div class="profile-image-wrapper">
+                    <img src="images/contact-background-img.jpg" alt="Contact Image" class="profile-image">
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT FORM -->
+        <form action="https://formsubmit.co/nidaxapa@gmail.com" method="POST" class="contact-form">
+
+            <input type="hidden" name="_next" value="https://bennettdcsm.github.io/DGME169_Nida-A/index.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- FIRST + LAST NAME -->
+            <div class="row-2">
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="first_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="last_name" required>
+                </div>
+            </div>
+
+            <!-- EMAIL + PHONE -->
+            <div class="row-2">
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input id="phone" type="tel" name="phone">
+                    <span id="phone-error" style="color:red; font-size:0.9rem;"></span>
+                </div>
+            </div>
+
+            <!-- SUBJECT -->
+            <div class="form-group">
+                <label>Subject</label>
+                <input type="text" name="subject">
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="form-group">
+                <label>Leave me a message...</label>
+                <textarea name="message" required></textarea>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="submit-wrapper">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer class="footer-bar"></footer>
+
+
+    <!-- SCRIPT -->
+    <script>
+        /* MOBILE MENU */
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        /* SIMPLE PHONE VALIDATION */
+        const phoneInput = document.getElementById("phone");
+        const phoneError = document.getElementById("phone-error");
+
+        phoneInput.addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9+()\-\s]/g, "");
+        });
+
+        phoneInput.addEventListener("blur", function () {
+            const value = phoneInput.value.trim();
+
+            if (value.length > 0 && value.length < 7) {
+                phoneError.textContent = "Please enter a valid phone number.";
+            } else {
+                phoneError.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+</html>
