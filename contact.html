@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nida Apa</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -48,19 +45,20 @@
         </ul>
     </div>
 
-
     <!-- PAGE CONTENT -->
     <main class="contact-page">
 
-        <!-- CONTACT HEADER -->
+        <!-- CONTACT INTRO SECTION -->
         <section class="profile-section">
             <div class="profile-container">
-                
+
                 <div class="profile-text">
                     <h1 class="profile-title">Get in touch</h1>
+
                     <p class="profile-paragraph">
                         Whether you have a project in mind, a collaboration opportunity, or just want to say hello, I’d love to hear from you.
                     </p>
+
                     <p class="profile-paragraph">
                         Feel free to drop a message using the form below. I try my best to respond within a couple of days.
                     </p>
@@ -73,14 +71,12 @@
             </div>
         </section>
 
-
         <!-- CONTACT FORM -->
         <form action="https://formsubmit.co/nidaxapa@gmail.com" method="POST" class="contact-form">
 
-            <input type="hidden" name="_next" value="https://bennettdcsm.github.io/DGME169_Nida-A/index.html">
+            <input type="hidden" name="_next" value="https://bennettdcsm.github.io/DGME169_Nida-A/">
             <input type="hidden" name="_captcha" value="false">
 
-            <!-- FIRST + LAST NAME -->
             <div class="row-2">
                 <div class="form-group">
                     <label>First Name *</label>
@@ -93,7 +89,6 @@
                 </div>
             </div>
 
-            <!-- EMAIL + PHONE -->
             <div class="row-2">
                 <div class="form-group">
                     <label>Email *</label>
@@ -107,19 +102,16 @@
                 </div>
             </div>
 
-            <!-- SUBJECT -->
             <div class="form-group">
                 <label>Subject</label>
                 <input type="text" name="subject">
             </div>
 
-            <!-- MESSAGE -->
             <div class="form-group">
                 <label>Leave me a message...</label>
                 <textarea name="message" required></textarea>
             </div>
 
-            <!-- SUBMIT -->
             <div class="submit-wrapper">
                 <button type="submit" class="submit-btn">Submit</button>
             </div>
@@ -130,7 +122,6 @@
 
     <footer class="footer-bar"></footer>
 
-
     <!-- SCRIPT -->
     <script>
         /* MOBILE MENU */
@@ -138,13 +129,8 @@
         const mobileMenu = document.querySelector('.mobile-menu');
         const closeMenu = document.querySelector('.close-menu');
 
-        hamburger.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
+        hamburger.addEventListener('click', () => mobileMenu.classList.add('active'));
+        closeMenu.addEventListener('click', () => mobileMenu.classList.remove('active'));
 
         /* SIMPLE PHONE VALIDATION */
         const phoneInput = document.getElementById("phone");
@@ -156,7 +142,6 @@
 
         phoneInput.addEventListener("blur", function () {
             const value = phoneInput.value.trim();
-
             if (value.length > 0 && value.length < 7) {
                 phoneError.textContent = "Please enter a valid phone number.";
             } else {
